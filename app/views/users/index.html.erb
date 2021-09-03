@@ -1,0 +1,25 @@
+<div class= "left">
+  <%= render "layouts/left", user: @user %>
+</div>
+
+<h1>Users#index</h1>
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "Show", user_path(user.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
