@@ -1,2 +1,11 @@
-<h1>Users#home</h1>
-<p>Find me in app/views/users/home.html.erb</p>
+<div class="container justify-content-center">
+  <div>
+    <h1><b>Wellcome to Bookers!</b></h1>
+    <div class="btn-wrapper col-10 mx-auto">
+      <div><%= link_to "Login", user_session_path, class: "btn btn-info btn-sm btn-block mb-3" %></div>
+      <div><%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-sm btn-block mb-3" %></div>
+    <div></div>
+  </div>
+</div>
+
+

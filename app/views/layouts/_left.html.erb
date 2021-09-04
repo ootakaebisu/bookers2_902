@@ -1,6 +1,9 @@
 <h2>User info</h2>
 
-<table>
+<table class="table">
+  <tr>
+    <%= attachment_image_tag user, :image, format: 'jpeg', size: "100x100" %>
+  </tr>
   <tr>
     <th>name</th>
     <td><%= user.name %></td>
@@ -13,20 +16,20 @@
 </table>
 
 <% if user == current_user %>
-  <%= link_to "(仮)", edit_user_path(user.id) %>
+  <%= link_to "(仮)", edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" %>
 <% end %>
 
-<h2>New Book</h2>
+<h2 class="mt-3">New Book</h2>
 <%= form_with model: @new_book,  locol: true do |f| %>
   <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control"  %>
   </div>
   <div class="form-group">
     <%= f.label :opinion %><br>
-    <%= f.text_area :opinion %>
+    <%= f.text_area :opinion, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.submit "Create Book" %>
+    <%= f.submit "Create Book", class: "btn btn-success" %>
   </div>
 <% end %>
